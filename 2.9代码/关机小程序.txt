@@ -1,0 +1,24 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+int main()
+{
+	//设置一个关机小程序，要求程序运行必须输入“我是猪”才能停止关机
+	char input[20] = { 0 };
+	system("shutdown.exe -s -t  60");//执行系统命令
+again:
+	printf("请注意你的电脑在一分钟内关机，如果输入“我是猪”就取消关机\n请输入：");
+	scanf("%s", &input);
+	if (strcmp(input, "我是猪") == 0)
+	{
+		system("shutdown.exe - a");//取消关机
+	}
+	else
+	{
+		goto again;
+	}
+
+	return 0;
+}

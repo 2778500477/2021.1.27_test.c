@@ -1,0 +1,26 @@
+#include<stdio.h>
+int is_leap_year(int n)
+{
+	if (n % 4 == 0 && n % 100 != 0 || n % 400 == 0)
+		return 1;
+	else
+		return 0;
+}
+int main()
+{
+	//用函数的方法打印1000-2000之间的闰年
+	int year = 0;
+	int count = 0;
+	for (year = 1000; year <= 2000; year++)
+	{
+		int ret = is_leap_year(year);
+		if (ret == 1)
+		{
+			printf("%d\n", year);
+			count++;
+		}
+
+	}
+	printf("%d\n", count);
+	return 0;
+}
